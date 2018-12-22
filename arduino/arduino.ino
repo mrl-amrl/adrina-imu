@@ -34,12 +34,10 @@ void setup()
 void loop()
 {
     imu.update();
-    signed int roll = -int(imu.getAngleX());
+    signed int roll = int(imu.getAngleX());
     signed int pitch = -int(imu.getAngleY());
     signed int yaw = -int(imu.getAngleZ());
 
-    if (roll < 0)
-        roll += 360;
     if (pitch < 0)
         pitch += 360;
     if (yaw < 0)
