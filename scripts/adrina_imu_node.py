@@ -24,9 +24,17 @@ class Controller:
 
     def process(self):        
         output = IMU()
-        message, _ = self.socket.recvfrom(1024)
+
+        message = ""
+        
+        try:
+            message, _ = self.socket.recvfrom(1024)
+        except socket.error as err:
+            rospy.logerr(err)
+            
         if not (message.startswith('$BEGIN') and message.endswith(';')):
             return
+        
         message = message[7:-1]
         parts = message.split(',')
 
