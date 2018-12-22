@@ -2,8 +2,6 @@
 import rospy
 import socket
 from adrina_imu.msg import IMU
-from adrina_imu.srv import SetZero
-
 
 class Controller:
     def __init__(self):
