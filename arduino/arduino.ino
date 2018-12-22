@@ -9,7 +9,7 @@ byte mac[] = {
 
 EthernetUDP Udp;
 
-IPAddress broadcastAddr(192, 168, 10, 115);
+IPAddress broadcastAddr(192, 168, 10, 110);
 unsigned int broadcastPort = 8888;
 
 IPAddress ip(192, 168, 10, 80);
